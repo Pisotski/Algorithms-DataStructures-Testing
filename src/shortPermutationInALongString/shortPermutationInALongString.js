@@ -13,7 +13,7 @@ var long = 'aab';
 
 var shortPermutationInALongString = function(short, long) {
   if( !short || !long ) {
-    return 'yo!'
+    return 'wrong input'
   }
   var letterHash = {};
   for( var i = 0; i < short.length; i++ ) {
@@ -54,5 +54,4 @@ var shortPermutationInALongString = function(short, long) {
   return result;
 }
 
-shortPermutationInALongString(short, long)
 export default shortPermutationInALongString;
