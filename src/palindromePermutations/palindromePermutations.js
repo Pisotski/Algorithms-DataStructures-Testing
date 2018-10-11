@@ -34,7 +34,7 @@ const isPalindromePermutation = (string) => {
     }
   }
   recurse(string);
-
+  
   return Object.keys(result).length > 0;
 }
 console.log(isPalindromePermutation('fok'))
