@@ -7,6 +7,7 @@
 // search for 0
 // when found toggle every item in a row to its negative
 // -0 === 0 => true 
+
 const zeroMatrix = (matrix) => {
 
   for(let row = 0; row < matrix.length; row += 1) {
