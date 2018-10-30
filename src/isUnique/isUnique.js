@@ -23,5 +23,4 @@ const isUnique = (string) => {
   }
   return true;
 }
-isUnique('xyi');
 export default isUnique;
