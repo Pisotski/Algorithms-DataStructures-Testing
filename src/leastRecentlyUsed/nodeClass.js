@@ -1,6 +1,6 @@
 export default class Node {
-  constructor(tuple) {
-    this.value = tuple;
+  constructor(key) {
+    this.value = key;
     this.next = this.prev = null;
   }
 };
