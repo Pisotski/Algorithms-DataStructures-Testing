@@ -25,6 +25,12 @@ describe ('Node', () => {
   })
 });
 
+let tree;
+beforeEach(() => {
+  tree = new BinarySearchTree();
+  const node20 = new Node(20); 
+  tree.add(node20);
+})
 describe ('Binary Search Tree', () => {
   const tree = new BinarySearchTree();
   const node20 = new Node(20); 
@@ -35,21 +41,24 @@ describe ('Binary Search Tree', () => {
   test('tree root should be 20', () => {
     expect(tree.root.data).toBe(20);
   })
-  const node30 = new Node(30);
-  const node10 = new Node(10);
-  tree.add(node10);
-  tree.add(node30);
-  test('should add smaller node to left branch', () => {
+  test('should add node to left branch', () => {
+    const node30 = new Node(30);
+    const node10 = new Node(10);
+    tree.add(node10);
+    tree.add(node30);
     expect(tree.root.left.data).toBe(10);
-  })
-  test('should add larger node to right branch', () => {
     expect(tree.root.right.data).toBe(30);
   })
-  const node301 = new Node(30);
-  const node101 = new Node(10);
-  // tree.add(node301);
-  // test('should add equal node to correct branch', () => {
-  //   expect(tree.root.right.left.data).toBe(30);
-  //   expect(tree.root.left.right.data).toBe(10);
-  // })
+  test('should add equal nodes to correct branch', () => {
+    const node30 = new Node(30);
+    const node10 = new Node(10);
+    tree.add(node10);
+    tree.add(node10);
+    tree.add(node30);
+    tree.add(node30);
+    expect(tree.root.left.left.data).toBe(10);
+    expect(tree.root.left.right).toBeNull();
+    expect(tree.root.right.left).toBeNull();
+    expect(tree.root.right.right.data).toBe(30);
+  })
 });

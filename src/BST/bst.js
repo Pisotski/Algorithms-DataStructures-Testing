@@ -28,23 +28,21 @@ export class BinarySearchTree {
       return;
     }
     if ( parent.data === child.data ) {
-      if ( parent.right === child.data ) {
-        this.add ( child, parent.right );
-      }
-      if ( parent.right < child.data ) {
-        const cleanNode = this.swap(parent.right, child)
-        this.add ( cleanNode, parent.right );
+      if( child.data >= this.root.data ) {
+        if( !parent.right ) {
+          parent.right = child;
+        } else {
+          this.add( parent.right, child )
+        }
+      } else {
+        if( !parent.left ) {
+          parent.left = child;
+        } else {
+          this.add( parent.left, child )
+        }
       }
       return;
     }
-  }
-  swap( node1, node2) {
-    const node = node1;
-    node2.left = node.left;
-    node2.right = node.right;
-    node1.right = node2;
-    node.clear();
-    return node;
   }
 }
 
