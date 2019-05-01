@@ -8,8 +8,6 @@ export class BinarySearchTree {
       return;
     }
     if ( parent.data > child.data ) {
-      // parent 9 greater than child 7
-      // 
       if ( !parent.left ) {
         parent.left = child
       } else {
@@ -18,8 +16,6 @@ export class BinarySearchTree {
       return;
     }
     if ( parent.data < child.data ) {
-      // parent 9 smaler than child 10
-      // 
       if ( !parent.right ) {
         parent.right = child
       } else {
@@ -32,20 +28,27 @@ export class BinarySearchTree {
         if( !parent.right ) {
           parent.right = child;
         } else {
-          this.add( parent.right, child )
+          this.add( parent.right, child );
         }
       } else {
         if( !parent.left ) {
           parent.left = child;
         } else {
-          this.add( parent.left, child )
+          this.add( parent.left, child );
         }
       }
       return;
     }
   }
+  delete(data) {
+
+  }
 }
 
+   10
+  5 20
+  15 25
+  13 16 23 26
 export class Node {
   constructor( n ) {
     this.data = n;
