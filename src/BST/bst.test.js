@@ -5,7 +5,6 @@ describe ('Node', () => {
   test ('should create node', () => {
     expect(node.data).toEqual(3);
   })
-
   test ('should create node with left and right with value of null', () => {
     expect(node.left).toBeNull();
     expect(node.right).toBeNull();

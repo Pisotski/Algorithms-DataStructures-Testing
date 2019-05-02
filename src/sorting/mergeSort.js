@@ -8,7 +8,7 @@ export const merge = function( left, right ) {
   // It merges them to form a single sorted subarray that replaces the current subarray A[p..r].
     const sortedSequence = [];
     while( left.length && right.length ) {
-      if( left[0] < right[0] ) {
+      if( left[0] <= right[0] ) {
         sortedSequence.push(left.shift(0))
       } else {
         sortedSequence.push(right.shift(0))
@@ -18,7 +18,7 @@ export const merge = function( left, right ) {
   };
   
   export const mergeSort = function( sequence, callback ) {
-    if( sequence.length === 1 ) {
+    if( sequence.length <= 1 ) {
       return sequence;
     }
     const middle = Math.floor( sequence.length / 2 );
