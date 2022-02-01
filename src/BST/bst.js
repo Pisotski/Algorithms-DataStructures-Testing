@@ -45,10 +45,10 @@ export class BinarySearchTree {
   }
 }
 
-   10
-  5 20
-  15 25
-  13 16 23 26
+  //  10
+  // 5 20
+  // 15 25
+  // 13 16 23 26
 export class Node {
   constructor( n ) {
     this.data = n;

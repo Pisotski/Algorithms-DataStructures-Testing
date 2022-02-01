@@ -8,6 +8,9 @@ $ npm run compile
 testing:
 $ npm jest
 
+to run a single test:
+$ npm test -- bar.spec.js
+
 Problems from:
 Cracking the Coding Interview,
 and other
