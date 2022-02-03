@@ -81,10 +81,9 @@ var maxArea = function(height) {
             //right pointer moves to default (the last position)
             //minBorder goes to default (0)
             var moveLeft = function () {
-                
+
                 leftBorderPointer = leftBorderPointer + 1;
-                rightBorderPoiner = lastElement;
-                
+                rightBorderPoiner = lastElement;                
                 return;
             }
     
