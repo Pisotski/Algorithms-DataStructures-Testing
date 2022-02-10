@@ -10,10 +10,6 @@
         }
 
         //implement preOrder
-        
-          //add node should start with the root and 
-         //determine where the node belongs to
-        //according to BST properties
 
         swap (node1, node2) {
 
@@ -82,16 +78,33 @@
             console.log(`tree initialized`)
         }
         
-        preOrder () {
-
-        }
-
-        deleteNode() {
+        search (node, value) {
+            //search function takes value and returnes the corresponding node
+            if(!node) {
+                console.log(`there is no node with value ${value}`);
+                return;
+            }
+            if (node.value === value) {
+                console.log(`here you go`);
+                console.log(node)
+                return node
+            }
             
+            return node.value > value ? this.search(node.left, value) : this.search(node.right, value)
         }
-       //delete node should find an element and
-      //delete is replacing the delete node with the correct one of its children
-     //the missing child also has to be replace
+
+        deleteNode(value) {
+            //takes value
+            //searches for node
+            //when found deletes node
+// TODO: determine which branch to delete by serching the depths of two branches
+
+            //detach left branch
+            //replaces deleted node itself with the right branch
+            //attach detached branch to the right branch
+            
+            //returns deleted node 
+        }
     }
 
     //implement preOrder
@@ -113,4 +126,5 @@
     //     birch.addNode(node)
     // }
     console.log(birch)
+
 }
