@@ -102,7 +102,6 @@
 
             let deletedValue = toBeDeleted.value;
 
-
             //when found deletes node
 // TODO: determine which branch to delete by searching the depths of two branches
             //detach left branch
@@ -129,11 +128,9 @@
     //implement inOrder
     //implement levelOrder
 
-
     //balance tree should toss the nodes
     //so the number of nodes on the right side of the tree
     //be equal or (+-1 node) to the number of nodes on the left
-
 
     let birch = new BST([61,13,34,120,55,311,45,39,18,11,2,6,23,27,98,5,66]);
 
