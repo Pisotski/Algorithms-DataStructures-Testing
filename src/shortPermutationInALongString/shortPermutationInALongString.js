@@ -11,44 +11,44 @@
 var short = 'ab';
 var long = 'aab';
 
-var shortPermutationInALongString = function(short, long) {
-  if( !short || !long ) {
+var shortPermutationInALongString = function (short, long) {
+  if (!short || !long) {
     return 'wrong input'
   }
   var letterHash = {};
-  for( var i = 0; i < short.length; i++ ) {
+  for (var i = 0; i < short.length; i++) {
     var letter = short[i];
-    if( !letterHash[letter] ) {
+    if (!letterHash[letter]) {
       letterHash[letter] = 0;
     }
     letterHash[letter] += 1;
   }
   var start = 0;
-  var gap = short.length-1;
+  var gap = short.length - 1;
   var result = [];
 
-  var findPermutations = function(start, end, hash) {
+  var findPermutations = function (start, end, hash) {
     hash = hash || Object.assign({}, letterHash);
 
-    while ( start <= end ) {
+    while (start <= end) {
       var letter = long[start];
-      if( !hash[letter] ) {
+      if (!hash[letter]) {
         return;
       }
       hash[letter] -= 1;
-      if( hash[letter] === 0 ) {
+      if (hash[letter] === 0) {
         delete hash[letter];
       }
       start += 1;
     }
-    if( !Object.keys(hash).length ) {
-      result.push([end-gap, end]);
+    if (!Object.keys(hash).length) {
+      result.push([end - gap, end]);
     }
   }
 
-  for( var i = 0; i < long.length; i += 1 ) {
-    if( long[i] in letterHash && long[i+gap] in letterHash ) {
-      findPermutations(i, i+gap);
+  for (var i = 0; i < long.length; i += 1) {
+    if (long[i] in letterHash && long[i + gap] in letterHash) {
+      findPermutations(i, i + gap);
     }
   }
   return result;
